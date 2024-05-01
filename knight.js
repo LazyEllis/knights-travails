@@ -3,6 +3,12 @@ import createGraph from "./graph.js";
 
 const graph = createGraph();
 
+/**
+ * Simulates the knight's moves from origin to destination using BFS algorithm.
+ * @param {Array} origin - The starting coordinate.
+ * @param {Array} destination - The target coordinate.
+ * @returns {Array} The shortest path from origin to destination.
+ */
 const simulateKnightMoves = (origin, destination) => {
   if (isIdentical(origin, destination)) return [origin];
 
@@ -27,6 +33,7 @@ const simulateKnightMoves = (origin, destination) => {
     });
   }
 
+  // Reconstruct the shortest path
   const path = [destination];
   let current = destination;
 
@@ -39,6 +46,11 @@ const simulateKnightMoves = (origin, destination) => {
   return path;
 };
 
+/**
+ * Finds the shortest path for the knight from origin to destination and prints the path.
+ * @param {Array} origin - The starting coordinate.
+ * @param {Array} destination - The target coordinate.
+ */
 const knightMoves = (origin, destination) => {
   const path = simulateKnightMoves(origin, destination);
 
